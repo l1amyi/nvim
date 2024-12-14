@@ -29,5 +29,8 @@ require("lazy").setup({
     require("config.plugins.nvimtree"),
     require("config.plugins.tmuxnavigator"),
     require("config.plugins.treesitter"),
+    require("config.plugins.mason"),
+    require("config.plugins.lsp"),
+    require("config.plugins.cmp"),
 },{
 })
