@@ -24,6 +24,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     require("config.plugins.telescope"),
     require("config.plugins.flash"),
-    require("config.plugins.dracula"),
+    require("config.plugins.theme"),
+    require("config.plugins.lualine"),
+    require("config.plugins.nvimtree"),
+    require("config.plugins.tmuxnavigator"),
+    require("config.plugins.treesitter"),
 },{
 })

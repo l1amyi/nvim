@@ -1,4 +1,6 @@
 -- plugins/telescope.lua:
+-- need ripgrep to use live_grep, scoop install ripgrep on windows
+
 return {
 	'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	dependencies = { 'nvim-lua/plenary.nvim' },
