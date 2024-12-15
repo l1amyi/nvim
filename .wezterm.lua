@@ -8,41 +8,78 @@ config.color_scheme = 'Afterglow'
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	-- config.default_prog = { "pwsh.exe" }
 	config.default_prog = { "powershell.exe" }
+
+	-- 设置powershell默认的工作目录
+	-- config.default_cwd = "D:"
+
+	-- 修改切换终端快捷键
+	config.keys = {
+		-- resize panel
+		{ key = "h",   mods = "CTRL|ALT",   action = wezterm.action.AdjustPaneSize({ 'Left', 5 })},
+		{ key = "l",   mods = "CTRL|ALT",   action = wezterm.action.AdjustPaneSize({ 'Right', 5 })},
+		{ key = "j",   mods = "CTRL|ALT",   action = wezterm.action.AdjustPaneSize({ 'Down', 5 })},
+		{ key = "k",   mods = "CTRL|ALT",   action = wezterm.action.AdjustPaneSize({ 'Up', 5 })},
+
+		{ key = "w",   mods = "CTRL|ALT",   action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "n",   mods = "CTRL|ALT",   action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+		-- F11 切换全屏
+		{ key = "F11", mods = "NONE",       action = wezterm.action.ToggleFullScreen },
+		-- Ctrl + Shift + - 缩小字体
+		{ key = "-",   mods = "CTRL|SHIFT", action = wezterm.action.IncreaseFontSize },
+		-- Ctrl + Shift + = 扩大字体
+		{ key = "=",   mods = "CTRL|SHIFT", action = wezterm.action.DecreaseFontSize },
+		-- Ctrl + Shift + 0 重置字体
+		{ key = "0",   mods = "CTRL|SHIFT", action = wezterm.action.ResetFontSize },
+		-- 垂直分屏
+		{ key = "d",   mods = "CTRL|SHIFT", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+		-- 水平分屏
+		{ key = "s",   mods = "CTRL|SHIFT", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+		-- 关闭当前窗格
+		{ key = "w",   mods = "CTRL|SHIFT", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+		-- 切换到左侧窗格
+		{ key = "h",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+		-- 切换到下方窗格
+		{ key = "j",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+		-- 切换到上方窗格
+		{ key = "k",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+		-- 切换到右侧窗格
+		{ key = "l",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+	}
+else
+	-- 修改切换终端快捷键
+	config.keys = {
+		-- resize panel
+		{ key = "h",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Left', 5 })},
+		{ key = "l",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Right', 5 })},
+		{ key = "j",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Down', 5 })},
+		{ key = "k",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Up', 5 })},
+
+		{ key = "w",   mods = "CTRL|OPTIONS", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "n",   mods = "CTRL|OPTIONS", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+		-- F11 切换全屏
+		{ key = "F",   mods = "CTRL|SHIFT", action = wezterm.action.ToggleFullScreen },
+		-- Ctrl + Shift + - 缩小字体
+		{ key = "-",   mods = "CTRL|SHIFT", action = wezterm.action.IncreaseFontSize },
+		-- Ctrl + Shift + = 扩大字体
+		{ key = "=",   mods = "CTRL|SHIFT", action = wezterm.action.DecreaseFontSize },
+		-- Ctrl + Shift + 0 重置字体
+		{ key = "0",   mods = "CTRL|SHIFT", action = wezterm.action.ResetFontSize },
+		-- 垂直分屏
+		{ key = "d",   mods = "CTRL|SHIFT", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
+		-- 水平分屏
+		{ key = "s",   mods = "CTRL|SHIFT", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
+		-- 关闭当前窗格
+		{ key = "w",   mods = "CTRL|SHIFT", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
+		-- 切换到左侧窗格
+		{ key = "h",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
+		-- 切换到下方窗格
+		{ key = "j",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
+		-- 切换到上方窗格
+		{ key = "k",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
+		-- 切换到右侧窗格
+		{ key = "l",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
+	}
 end
-
--- 设置powershell默认的工作目录
--- config.default_cwd = "D:"
-
--- 修改切换终端快捷键
-config.keys = {
-
-	{ key = "h",   mods = "CTRL|ALT",   action = wezterm.action({ ActivateTabRelative = -1 }) },
-	{ key = "l",   mods = "CTRL|ALT",   action = wezterm.action({ ActivateTabRelative = 1 }) },
-	{ key = "w",   mods = "CTRL|ALT",   action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-	{ key = "n",   mods = "CTRL|ALT",   action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
-	-- F11 切换全屏
-	{ key = "F11", mods = "NONE",       action = wezterm.action.ToggleFullScreen },
-	-- Ctrl + Shift + - 缩小字体
-	{ key = "-",   mods = "CTRL|SHIFT", action = wezterm.action.IncreaseFontSize },
-	-- Ctrl + Shift + = 扩大字体
-	{ key = "=",   mods = "CTRL|SHIFT", action = wezterm.action.DecreaseFontSize },
-	-- Ctrl + Shift + 0 重置字体
-	{ key = "0",   mods = "CTRL|SHIFT", action = wezterm.action.ResetFontSize },
-	-- 垂直分屏
-	{ key = "d",   mods = "CTRL|SHIFT", action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }) },
-	-- 水平分屏
-	{ key = "s",   mods = "CTRL|SHIFT", action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }) },
-	-- 关闭当前窗格
-	{ key = "w",   mods = "CTRL|SHIFT", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-	-- 切换到左侧窗格
-	{ key = "h",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Left" }) },
-	-- 切换到下方窗格
-	{ key = "j",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
-	-- 切换到上方窗格
-	{ key = "k",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
-	-- 切换到右侧窗格
-	{ key = "l",   mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Right" }) },
-}
 
 -- 配置SSH域
 -- config.ssh_domains = {
