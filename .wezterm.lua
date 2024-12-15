@@ -49,13 +49,13 @@ else
 	-- 修改切换终端快捷键
 	config.keys = {
 		-- resize panel
-		{ key = "h",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Left', 5 })},
-		{ key = "l",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Right', 5 })},
-		{ key = "j",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Down', 5 })},
-		{ key = "k",   mods = "CTRL|OPTIONS", action = wezterm.action.AdjustPaneSize({ 'Up', 5 })},
+		{ key = "h",   mods = "CTRL|CMD", action = wezterm.action.AdjustPaneSize({ 'Left', 5 })},
+		{ key = "l",   mods = "CTRL|CMD", action = wezterm.action.AdjustPaneSize({ 'Right', 5 })},
+		{ key = "j",   mods = "CTRL|CMD", action = wezterm.action.AdjustPaneSize({ 'Down', 5 })},
+		{ key = "k",   mods = "CTRL|CMD", action = wezterm.action.AdjustPaneSize({ 'Up', 5 })},
 
-		{ key = "w",   mods = "CTRL|OPTIONS", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
-		{ key = "n",   mods = "CTRL|OPTIONS", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+		{ key = "w",   mods = "CTRL|CMD", action = wezterm.action({ CloseCurrentTab = { confirm = true } }) },
+		{ key = "n",   mods = "CTRL|CMD", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
 		-- F11 切换全屏
 		{ key = "F",   mods = "CTRL|SHIFT", action = wezterm.action.ToggleFullScreen },
 		-- Ctrl + Shift + - 缩小字体
