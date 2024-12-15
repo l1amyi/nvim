@@ -32,5 +32,7 @@ require("lazy").setup({
     require("config.plugins.mason"),
     require("config.plugins.lsp"),
     require("config.plugins.cmp"),
+    require("config.plugins.bufferline"),
+    require("config.plugins.rainbow"),
 },{
 })
