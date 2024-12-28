@@ -1,9 +1,14 @@
+local function check_backspace()
+    local col = vim.fn.col('.') - 1
+    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+end
+
 return {
     {
         "hrsh7th/nvim-cmp",
         config = function()
             local cmp = require("cmp")
-            local luasnip = require("cmp")
+            local luasnip = require("luasnip")
             cmp.setup {
                 snippet = {
                     expand = function(args)
