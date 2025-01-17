@@ -35,5 +35,6 @@ require("lazy").setup({
     require("config.plugins.bufferline"),
     require("config.plugins.rainbow"),
     require("config.plugins.dashboard"),
+    require("config.plugins.toggleterm"),
 },{
 })

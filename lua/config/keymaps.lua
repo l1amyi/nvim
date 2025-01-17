@@ -8,7 +8,6 @@ vim.keymap.set("n", "<leader>o", ":only<CR>", { noremap = true })
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { noremap = true })
 
-vim.keymap.set("n", "<leader>t", ":sp<CR>:terminal<CR>i", {noremap = true})
 
 -- nvim tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true})
