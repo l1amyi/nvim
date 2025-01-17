@@ -10,11 +10,10 @@ return {
 
         -- Customized on_attach function
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-        local opts = { noremap = true, silent = true }
-        vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, opts)
-        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-        vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+        vim.keymap.set('n', '<leader>f', vim.diagnostic.open_float, { noremap = true, silent = true, desc = "lsp open float" })
+        vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "lsp goto prev" })
+        vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "lsp goto next" })
+        vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { noremap = true, silent = true, desc = "lsp setloclist" })
 
         -- Use an on_attach function to only map the following keys
         -- after the language server attaches to the current buffer

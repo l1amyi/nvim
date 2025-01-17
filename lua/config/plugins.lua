@@ -36,5 +36,6 @@ require("lazy").setup({
     require("config.plugins.rainbow"),
     require("config.plugins.dashboard"),
     require("config.plugins.toggleterm"),
+    require("config.plugins.whichkey"),
 },{
 })

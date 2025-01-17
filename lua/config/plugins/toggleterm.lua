@@ -38,8 +38,8 @@ return {
 
         local lazyterm = Terminal:new({ hidden = true, direction = 'float' , start_in_insert = true})
 
-        vim.keymap.set('n', '<leader>t', function() lazyterm:toggle() end)
-        vim.keymap.set('t', '<leader>t', function() lazyterm:toggle() end)
+        vim.keymap.set('n', '<leader>t', function() lazyterm:toggle() end, {desc = "open terminal"})
+        vim.keymap.set('t', '<leader>t', function() lazyterm:toggle() end, {desc = "close terminal"})
     end,
 
 }
