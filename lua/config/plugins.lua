@@ -34,5 +34,6 @@ require("lazy").setup({
     require("config.plugins.cmp"),
     require("config.plugins.bufferline"),
     require("config.plugins.rainbow"),
+    require("config.plugins.diffview"),
 },{
 })
