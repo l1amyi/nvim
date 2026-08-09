@@ -11,3 +11,7 @@ vim.keymap.set("n", "<leader>nh", "<CMD>nohl<CR>", { noremap = true }, {desc = "
 
 -- nvim tree
 vim.keymap.set("n", "<leader>e", "<CMD>NvimTreeToggle<CR>", { noremap = true}, {desc = "open file tree"})
+
+-- quickfix / location list
+vim.keymap.set("n", "<leader>lc", "<CMD>lclose<CR>", { noremap = true, silent = true, desc = "close location list" })
+vim.keymap.set("n", "<leader>lo", "<CMD>lopen<CR>", { noremap = true, silent = true, desc = "open location list" })
