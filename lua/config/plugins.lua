@@ -37,5 +37,6 @@ require("lazy").setup({
     require("config.plugins.dashboard"),
     require("config.plugins.toggleterm"),
     require("config.plugins.whichkey"),
+    require("config.plugins.diffview"),
 },{
 })
