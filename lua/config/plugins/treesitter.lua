@@ -1,14 +1,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     build = ":TSUpdate",
     config = function()
-        local configs = require("nvim-treesitter.configs")
+        require("nvim-treesitter.config").setup({})
 
-        configs.setup({
-            ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", "python", "cmake" },
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
+        -- nvim 0.12 内置了 treesitter 高亮和缩进，无需额外配置
+        -- parser 按需自动安装，也可手动 :TSInstall <lang>
     end
 }
